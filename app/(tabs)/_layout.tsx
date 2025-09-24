@@ -5,29 +5,28 @@ import useTheme from '@/hooks/useTheme'
 import { Ionicons } from '@expo/vector-icons'
 
 const TabsLayout = () => {
-    const {colors} = useTheme();
+    const { colors } = useTheme();
     return (
         <Tabs screenOptions={{
-            tabBarInactiveTintColor:colors.primary,
-            tabBarActiveTintColor:'green',
-            tabBarStyle:{
-                backgroundColor: '#1e293b',
-                borderTopWidth:1,
-                borderTopColor: "Yellow",
-                height:90,
-                paddingBottom : 30,
+            tabBarInactiveTintColor: colors.primary,
+            tabBarActiveTintColor: colors.textMuted,
+            tabBarStyle: {
+                backgroundColor: colors.surface,
+                borderTopWidth: 1,
+                borderTopColor: colors.border,
+                height: 90,
+                paddingBottom: 30,
                 paddingTop: 10
             },
-            headerShown:false
+            headerShown: false
         }}>
             <Tabs.Screen
-
                 name='index'
                 options={{
                     title: "Todos",
                     tabBarIcon: ({ color, size }) => (
                         <Ionicons
-                            name='flash-outline' size={size}color={color}>
+                            name='flash-outline' size={size} color={color}>
                         </Ionicons>)
                 }}>
 
