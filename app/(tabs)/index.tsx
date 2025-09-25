@@ -1,34 +1,18 @@
+import { createHomeStyle } from "@/assets/styles/home.style";
 import useTheme from "@/hooks/useTheme";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-
-
+import { Text, TouchableOpacity } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 export default function Index() {
+  const { toggleDarkMode, colors } = useTheme();
 
-  const {toggleDarkMode} = useTheme();
+  const homestyle = createHomeStyle(colors);
   return (
-    <View
-      style={style.container}
-    >
-      <Text style={style.content}>Edit app/index.tsx to edit this screen. sky One</Text>
-      <Text style={style.content}>hi</Text>
-
-      <TouchableOpacity onPress={toggleDarkMode}>
-
-        <Text>Toggle Button</Text>
-      </TouchableOpacity>
-    </View>
+  <SafeAreaView>
+    <Text style={homestyle.container}>Edit app/index.tsx to edit this screen. sky One</Text>
+    <TouchableOpacity onPress={toggleDarkMode}>
+      <Text>Toggle Button</Text>
+    </TouchableOpacity>
+  </SafeAreaView>
   );
 }
 
-const style = StyleSheet.create({
-
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
-  content: {
-    fontSize: 52,
-  }
-})
