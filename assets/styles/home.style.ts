@@ -15,6 +15,15 @@ export const createHomeStyle = (colors: ColorScheme) => {
             paddingBottom: 24,
         },
 
+        iconContiner:{
+            width:56,
+            height:56,
+            borderRadius: 16,
+            justifyContent:"center",
+            alignItems:"center",
+            marginRight: 16
+        },
+
     });
     return style;
 }
