@@ -6,22 +6,41 @@ export const createHomeStyle = (colors: ColorScheme) => {
         container: {
             flex: 1,
         },
-         safeArea: {
+        safeArea: {
             flex: 1,
         },
-        header:{
+        header: {
             paddingHorizontal: 24,
             paddingVertical: 32,
             paddingBottom: 24,
         },
-
-        iconContiner:{
-            width:56,
-            height:56,
-            borderRadius: 16,
-            justifyContent:"center",
+        titleContainer:{
+            flexDirection: "row",
             alignItems:"center",
+            marginBottom:20
+        },
+        iconContiner: {
+            width: 56,
+            height: 56,
+            borderRadius: 16,
+            justifyContent: "center",
+            alignItems: "center",
             marginRight: 16
+        },
+        titleTextContiner: {
+            flex:1,
+        },
+        title: {
+            fontSize: 32,
+            fontWeight: "700",
+            letterSpacing: -1,
+            marginBottom: 4,
+            color: colors.text
+        },
+        subtitle: {
+            fontSize: 17,
+            fontWeight: "500",
+            color: colors.textMuted
         },
 
     });
