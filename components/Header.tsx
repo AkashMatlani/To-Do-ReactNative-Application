@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <View style={homeStyle.header}>
-      <View style ={homeStyle.titleContainer}>
+      <View style={homeStyle.titleContainer}>
         <LinearGradient colors={colors.gradients.primary} style={homeStyle.iconContiner}>
           <Ionicons name='flash-outline' size={28} color="ffffff" />
         </LinearGradient>
@@ -33,6 +33,18 @@ const Header = () => {
           <Text style={homeStyle.subtitle}>
             {completedCount} of {totalCount} completed
           </Text>
+        </View>
+      </View>
+
+      <View style={homeStyle.progressContainer}>
+        <View style={homeStyle.progressBarContainer}>
+          <View style={homeStyle.progrssBar}>
+            <LinearGradient
+              colors={colors.gradients.success}
+              style={[homeStyle.progrssFill, { width: `${progressPercentage}%` }]}
+            ></LinearGradient>
+          </View>
+          <Text style={homeStyle.progressText}>{Math.round(progressPercentage)}%</Text>
         </View>
       </View>
 

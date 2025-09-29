@@ -14,10 +14,10 @@ export const createHomeStyle = (colors: ColorScheme) => {
             paddingVertical: 32,
             paddingBottom: 24,
         },
-        titleContainer:{
+        titleContainer: {
             flexDirection: "row",
-            alignItems:"center",
-            marginBottom:20
+            alignItems: "center",
+            marginBottom: 20
         },
         iconContiner: {
             width: 56,
@@ -28,7 +28,7 @@ export const createHomeStyle = (colors: ColorScheme) => {
             marginRight: 16
         },
         titleTextContiner: {
-            flex:1,
+            flex: 1,
         },
         title: {
             fontSize: 32,
@@ -42,7 +42,32 @@ export const createHomeStyle = (colors: ColorScheme) => {
             fontWeight: "500",
             color: colors.textMuted
         },
-
+        progressContainer: {
+            marginTop: 8,
+        },
+        progressBarContainer: {
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 16,
+        },
+        progrssBar: {
+            flex: 1,
+            height: 12,
+            borderRadius: 6,
+            overflow: "hidden",
+            backgroundColor: colors.border,
+        },
+        progrssFill: {
+            height: "100%",
+            borderRadius: 6,
+        },
+        progressText: {
+            fontSize: 16,
+            fontWeight: "700",
+            minWidth: 40,
+            textAlign: "right",
+            color: colors.success
+        }
     });
     return style;
 }
