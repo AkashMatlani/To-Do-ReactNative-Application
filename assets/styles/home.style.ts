@@ -66,7 +66,44 @@ export const createHomeStyle = (colors: ColorScheme) => {
             fontWeight: "700",
             minWidth: 40,
             textAlign: "right",
-            color: colors.success
+            color: colors.success,
+        },
+        inputSetion: {
+            paddingHorizontal: 24,
+            paddingBottom: 12,
+        },
+        inputWrapper: {
+            flexDirection: "row",
+            alignItems: "flex-end",
+            gap: 16
+        },
+
+        input: {
+            flex: 1,
+            borderWidth: 2,
+            borderRadius: 20,
+            paddingHorizontal: 20,
+            paddingVertical: 16,
+            fontSize: 17,
+            maxHeight: 120,
+            fontWeight: "500",
+            backgroundColor: colors.backgrounds.input,
+            borderColor: colors.border,
+            color: colors.text
+        },
+        inputFocused: {
+            borderColor: colors.primary
+        },
+
+        addButton: {
+            width: 56,
+            height: 56,
+            borderRadius: 28,
+            justifyContent: "center",
+            alignItems: "center"
+        },
+        addButtonDisabled: {
+            opacity: 0.5
         }
     });
     return style;

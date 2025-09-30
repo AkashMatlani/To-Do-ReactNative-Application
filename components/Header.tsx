@@ -47,7 +47,6 @@ const Header = () => {
           <Text style={homeStyle.progressText}>{Math.round(progressPercentage)}%</Text>
         </View>
       </View>
-
     </View>
   )
 }
