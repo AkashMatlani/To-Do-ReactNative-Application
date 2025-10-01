@@ -104,6 +104,17 @@ export const createHomeStyle = (colors: ColorScheme) => {
         },
         addButtonDisabled: {
             opacity: 0.5
+        },
+        loadingContainer: {
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center",
+        },
+        loadingText: {
+            marginTop: 20,
+            fontSize: 18,
+            fontWeight: "500",
+            color: colors.text,
         }
     });
     return style;
