@@ -115,6 +115,13 @@ export const createHomeStyle = (colors: ColorScheme) => {
             fontSize: 18,
             fontWeight: "500",
             color: colors.text,
+        },
+        todoList:{
+            flex:1
+        },
+        todoListContent:{
+            paddingHorizontal:24,
+            paddingBottom:100
         }
     });
     return style;
