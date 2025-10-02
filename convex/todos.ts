@@ -21,15 +21,17 @@ export const addTodos = mutation({
 });
 
 export const toggleTodos = mutation({
-    args: { id: v.id("todos") },
-    handler: async (ctx, args) => {
-        const todo = await ctx.db.get(args.id)
-        if (todo!) throw new ConvexError("Todo not Found")
+  args: { id: v.id("todos") },
+  handler: async (ctx, args) => {
+    const todo = await ctx.db.get(args.id);
+    if (!todo) throw new ConvexError("Todo not Found");
 
-        await ctx.db.patch(args.id, {
-            isCompleted: !todo!.isCompleted
-        })
-    }
+    await ctx.db.patch(args.id, {
+      isCompleted: !todo.isCompleted
+    });
+
+    return { success: true };
+  }
 });
 
 export const deleteTodo = mutation({
