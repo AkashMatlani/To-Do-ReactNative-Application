@@ -1,4 +1,5 @@
 import { createHomeStyle } from "@/assets/styles/home.style";
+import EmptyState from "@/components/EmptyState";
 import Header from "@/components/Header";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import TodoInput from "@/components/TodoInput";
@@ -27,7 +28,7 @@ export default function Index() {
   const handleToggleTodo = async (id: Id<"todos">) => {
 
     try {
-      await toggleTodo({id})
+      await toggleTodo({ id })
 
     } catch (error) {
       console.log("Error toggling todo", error);
@@ -50,44 +51,46 @@ export default function Index() {
             onPress={() => handleToggleTodo(item._id)}>
 
 
-          <LinearGradient
-            colors={item.isCompleted ? colors.gradients.success : colors.gradients.muted}
-            style={[homestyle.checkboxInner,
-            { borderColor: item.isCompleted ? "transparent" : colors.border, }]
-            }
-          >
-            {item.isCompleted && <Ionicons name="checkmark" size={18} color={"#fff"}></Ionicons>}
-          </LinearGradient>
-       </TouchableOpacity>
-
-        <View style ={homestyle.todoTextContainer}>
-         <Text style ={[
-          homestyle.todoText,
-          item.isCompleted && {textDecorationLine:"line-through",
-            color:colors.textMuted,
-            opacity:0.6,}
-         ]}>  {item.text}</Text>
-        </View>
-
-        <View style={homestyle.todoAction}>
-          <TouchableOpacity 
-          onPress={()=>{}}
-          activeOpacity={0.8}>
-           <LinearGradient colors={colors.gradients.warning}
-           style={homestyle.actionButton}>
-           <Ionicons name="pencil" size={14} color="fff"></Ionicons>
-           </LinearGradient> 
+            <LinearGradient
+              colors={item.isCompleted ? colors.gradients.success : colors.gradients.muted}
+              style={[homestyle.checkboxInner,
+              { borderColor: item.isCompleted ? "transparent" : colors.border, }]
+              }
+            >
+              {item.isCompleted && <Ionicons name="checkmark" size={18} color={"#fff"}></Ionicons>}
+            </LinearGradient>
           </TouchableOpacity>
 
-          <TouchableOpacity 
-          onPress={()=>{}}
-          activeOpacity={0.8}>
-           <LinearGradient colors={colors.gradients.danger}
-           style={homestyle.actionButton}>
-           <Ionicons name="trash" size={14} color="fff"></Ionicons>
-           </LinearGradient> 
-          </TouchableOpacity>
-        </View>
+          <View style={homestyle.todoTextContainer}>
+            <Text style={[
+              homestyle.todoText,
+              item.isCompleted && {
+                textDecorationLine: "line-through",
+                color: colors.textMuted,
+                opacity: 0.6,
+              }
+            ]}>  {item.text}</Text>
+
+            <View style={homestyle.todoAction}>
+              <TouchableOpacity
+                onPress={() => { }}
+                activeOpacity={0.8}>
+                <LinearGradient colors={colors.gradients.warning}
+                  style={homestyle.actionButton}>
+                  <Ionicons name="pencil" size={14} color="fff" />
+                </LinearGradient>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                onPress={() => { }}
+                activeOpacity={0.8}>
+                <LinearGradient colors={colors.gradients.danger}
+                  style={homestyle.actionButton}>
+                  <Ionicons name="trash" size={14} color="fff" />
+                </LinearGradient>
+              </TouchableOpacity>
+            </View>
+          </View>
         </LinearGradient>
       </View>
     )
@@ -104,6 +107,7 @@ export default function Index() {
           keyExtractor={(item) => item._id}
           style={homestyle.todoList}
           contentContainerStyle={homestyle.todoListContent}
+          ListEmptyComponent={<EmptyState/>}
         />
 
       </SafeAreaView>

@@ -166,13 +166,39 @@ export const createHomeStyle = (colors: ColorScheme) => {
             flexDirection: "row",
             gap: 12,
         },
-        actionButton:{
-            width:40,
-            height:40,
-            borderRadius:20,
-            justifyContent:"center",
-            alignItems:"center"
-        }
+        actionButton: {
+            width: 40,
+            height: 40,
+            borderRadius: 20,
+            justifyContent: "center",
+            alignItems: "center"
+        },
+        emptyContainer: {
+            alignItems: "center",
+            justifyContent: "center",
+            paddingVertical: 80
+        },
+        emptyIconContainer: {
+            width: 120,
+            height: 120,
+            borderRadius: 60,
+            justifyContent: "center",
+            alignItems: "center",
+            marginBottom: 24,
+        },
+        emptyText:{
+            fontSize:24,
+            fontWeight:"700",
+            marginBottom:8,
+            color:colors.text,
+        },
+         emptySubText:{
+            fontSize:17,
+            alignItems:"center",
+            paddingHorizontal:40,
+            lineHeight:24,
+            color:colors.textMuted,
+        },
     });
     return style;
 }
