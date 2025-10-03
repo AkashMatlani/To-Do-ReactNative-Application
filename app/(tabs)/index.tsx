@@ -68,6 +68,26 @@ export default function Index() {
             opacity:0.6,}
          ]}>  {item.text}</Text>
         </View>
+
+        <View style={homestyle.todoAction}>
+          <TouchableOpacity 
+          onPress={()=>{}}
+          activeOpacity={0.8}>
+           <LinearGradient colors={colors.gradients.warning}
+           style={homestyle.actionButton}>
+           <Ionicons name="pencil" size={14} color="fff"></Ionicons>
+           </LinearGradient> 
+          </TouchableOpacity>
+
+          <TouchableOpacity 
+          onPress={()=>{}}
+          activeOpacity={0.8}>
+           <LinearGradient colors={colors.gradients.danger}
+           style={homestyle.actionButton}>
+           <Ionicons name="trash" size={14} color="fff"></Ionicons>
+           </LinearGradient> 
+          </TouchableOpacity>
+        </View>
         </LinearGradient>
       </View>
     )

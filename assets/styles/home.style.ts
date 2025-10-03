@@ -152,15 +152,26 @@ export const createHomeStyle = (colors: ColorScheme) => {
             justifyContent: "center",
             alignItems: "center",
         },
-        todoTextContainer:{
-            flex:1,
+        todoTextContainer: {
+            flex: 1,
         },
-        todoText:{
-            fontSize:17,
-            lineHeight:24,
-            fontWeight:"500",
-            marginBottom:16,
-            color:colors.text,
+        todoText: {
+            fontSize: 17,
+            lineHeight: 24,
+            fontWeight: "500",
+            marginBottom: 16,
+            color: colors.text,
+        },
+        todoAction: {
+            flexDirection: "row",
+            gap: 12,
+        },
+        actionButton:{
+            width:40,
+            height:40,
+            borderRadius:20,
+            justifyContent:"center",
+            alignItems:"center"
         }
     });
     return style;
