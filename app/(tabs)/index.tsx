@@ -19,7 +19,10 @@ export default function Index() {
 
   const todos = useQuery(api.todos.getTodos);
 
-  const toggleTodo = useMutation(api.todos.toggleTodos)
+  const toggleTodo = useMutation(api.todos.toggleTodos);
+
+  const deleteTodo = useMutation(api.todos.deleteTodo);
+
 
   //undefined means it is in Loading State from canvex
   const isLoading = todos === undefined;
@@ -34,6 +37,21 @@ export default function Index() {
       console.log("Error toggling todo", error);
       Alert.alert("Error", "Failed to toggle todo")
     }
+  }
+
+  const handleDeleteTodo = async (id: Id<"todos">) => {
+
+    try {
+      Alert.alert("Delete Todo", "Are you sure you want to delete this todo?",[
+        {text: "Cancel", style: "cancel"},
+        {text: "Delete", style: "destructive",onPress:()=>deleteTodo({id})},
+      ])
+
+    } catch (error) {
+      console.log("Error deleteing todo", error);
+      Alert.alert("Error", "Failed to Delete todo")
+    }
+
   }
   type Todo = Doc<"todos">
 
@@ -82,7 +100,7 @@ export default function Index() {
               </TouchableOpacity>
 
               <TouchableOpacity
-                onPress={() => { }}
+                onPress={() => { handleDeleteTodo(item._id) }}
                 activeOpacity={0.8}>
                 <LinearGradient colors={colors.gradients.danger}
                   style={homestyle.actionButton}>
@@ -107,7 +125,7 @@ export default function Index() {
           keyExtractor={(item) => item._id}
           style={homestyle.todoList}
           contentContainerStyle={homestyle.todoListContent}
-          ListEmptyComponent={<EmptyState/>}
+          ListEmptyComponent={<EmptyState />}
         />
 
       </SafeAreaView>
