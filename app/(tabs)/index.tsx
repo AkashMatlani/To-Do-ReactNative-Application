@@ -9,6 +9,7 @@ import useTheme from "@/hooks/useTheme";
 import { Ionicons } from "@expo/vector-icons";
 import { useMutation, useQuery } from "convex/react";
 import { LinearGradient } from 'expo-linear-gradient';
+import { useState } from "react";
 import { Alert, FlatList, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -23,6 +24,10 @@ export default function Index() {
 
   const deleteTodo = useMutation(api.todos.deleteTodo);
 
+  const updateTodo = useMutation(api.todos.updateTodo);
+
+  const [editingId, setEditingId] = useState<Id<"todos"> | null>(null);
+  const [editText, setEditText] = useState("");
 
   //undefined means it is in Loading State from canvex
   const isLoading = todos === undefined;
@@ -42,17 +47,39 @@ export default function Index() {
   const handleDeleteTodo = async (id: Id<"todos">) => {
 
     try {
-      Alert.alert("Delete Todo", "Are you sure you want to delete this todo?",[
-        {text: "Cancel", style: "cancel"},
-        {text: "Delete", style: "destructive",onPress:()=>deleteTodo({id})},
+      Alert.alert("Delete Todo", "Are you sure you want to delete this todo?", [
+        { text: "Cancel", style: "cancel" },
+        { text: "Delete", style: "destructive", onPress: () => deleteTodo({ id }) },
       ])
-
     } catch (error) {
       console.log("Error deleteing todo", error);
       Alert.alert("Error", "Failed to Delete todo")
     }
 
   }
+
+  const handleEditTodo = (todo: Todo) => {
+    setEditText(todo.text);
+    setEditingId(todo._id);
+  }
+  const handleSaveEdit = async () => {
+    if (editingId) {
+      try {
+        await updateTodo({ id: editingId, text: editText.trim() })
+        setEditText("")
+        setEditingId(null)
+      } catch (error) {
+        console.log("Error updating todo",error);
+        Alert.alert("Error","Failed to update todo");
+      }
+    }
+  }
+
+  const handleCancelTodo = () => {
+    setEditText("");
+    setEditingId(null);
+  }
+
   type Todo = Doc<"todos">
 
   const renderTodoItem = ({ item }: { item: Todo }) => {
