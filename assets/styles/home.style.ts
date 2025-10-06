@@ -186,19 +186,34 @@ export const createHomeStyle = (colors: ColorScheme) => {
             alignItems: "center",
             marginBottom: 24,
         },
-        emptyText:{
-            fontSize:24,
-            fontWeight:"700",
-            marginBottom:8,
-            color:colors.text,
+        emptyText: {
+            fontSize: 24,
+            fontWeight: "700",
+            marginBottom: 8,
+            color: colors.text,
         },
-         emptySubText:{
+        emptySubText: {
+            fontSize: 17,
+            alignItems: "center",
+            paddingHorizontal: 40,
+            lineHeight: 24,
+            color: colors.textMuted,
+        },
+        editContainer: {
+            flex: 1
+        },
+        editInput:{
+            borderWidth:2,
+            borderRadius:16,
+            paddingHorizontal:16,
+            paddingVertical:12,
             fontSize:17,
-            alignItems:"center",
-            paddingHorizontal:40,
-            lineHeight:24,
-            color:colors.textMuted,
-        },
+            fontWeight:"500",
+            marginBottom:16,
+            backgroundColor:colors.backgrounds.editInput,
+            borderColor:colors.primary,
+            color:colors.text
+        }
     });
     return style;
 }
