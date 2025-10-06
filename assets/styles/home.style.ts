@@ -202,17 +202,34 @@ export const createHomeStyle = (colors: ColorScheme) => {
         editContainer: {
             flex: 1
         },
-        editInput:{
-            borderWidth:2,
-            borderRadius:16,
-            paddingHorizontal:16,
-            paddingVertical:12,
-            fontSize:17,
-            fontWeight:"500",
-            marginBottom:16,
-            backgroundColor:colors.backgrounds.editInput,
-            borderColor:colors.primary,
-            color:colors.text
+        editInput: {
+            borderWidth: 2,
+            borderRadius: 16,
+            paddingHorizontal: 16,
+            paddingVertical: 12,
+            fontSize: 17,
+            fontWeight: "500",
+            marginBottom: 16,
+            backgroundColor: colors.backgrounds.editInput,
+            borderColor: colors.primary,
+            color: colors.text
+        },
+        editButtons: {
+            flexDirection: "row",
+            gap: 12,
+        },
+        editButtonText: {
+            color: "#ffffff",
+            fontSize: 14,
+            fontWeight: "600"
+        },
+        editButton: {
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 8,
+            paddingHorizontal: 16,
+            paddingVertical: 10,
+            borderRadius: 12,
         }
     });
     return style;

@@ -118,6 +118,15 @@ export default function Index() {
                   placeholderTextColor={colors.textMuted}
                 ></TextInput>
 
+                <View style={homestyle.editButtons}>
+                  <TouchableOpacity onPress={handleSaveEdit} activeOpacity={0.8}>
+                    <LinearGradient colors={colors.gradients.success}
+                     style={homestyle.editButton}>
+                      <Ionicons name="checkmark" size={16} color="#fff"></Ionicons>
+                      <Text style={homestyle.editButtonText}>Save</Text>
+                     </LinearGradient>
+                  </TouchableOpacity>
+                </View>
               </View>
             ) : (
               <View style={homestyle.todoTextContainer}>
