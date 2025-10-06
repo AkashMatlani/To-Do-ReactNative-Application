@@ -126,6 +126,13 @@ export default function Index() {
                       <Text style={homestyle.editButtonText}>Save</Text>
                      </LinearGradient>
                   </TouchableOpacity>
+                    <TouchableOpacity onPress={handleCancelTodo} activeOpacity={0.8}>
+                    <LinearGradient colors={colors.gradients.success}
+                     style={homestyle.editButton}>
+                      <Ionicons name="close" size={16} color="#fff"></Ionicons>
+                      <Text style={homestyle.editButtonText}>Cancel</Text>
+                     </LinearGradient>
+                  </TouchableOpacity>
                 </View>
               </View>
             ) : (
