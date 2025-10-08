@@ -230,7 +230,8 @@ export const createHomeStyle = (colors: ColorScheme) => {
             paddingHorizontal: 16,
             paddingVertical: 10,
             borderRadius: 12,
-        }
+        },
+       
     });
     return style;
 }
