@@ -41,7 +41,7 @@ const ProgressStats = () => {
                     </View>
                 </LinearGradient>
 
-                  {/* Completed Todos */}
+                {/* Completed Todos */}
                 <LinearGradient colors={colors.gradients.background}
                     style={[SettingStyle.statCard, { borderLeftColor: colors.success }]}>
                     <View style={SettingStyle.statIconContainer}>
@@ -55,6 +55,23 @@ const ProgressStats = () => {
                     <View >
                         <Text style={SettingStyle.statNumber}>{completedTodos}</Text>
                         <Text style={SettingStyle.StatLabel}>Completed</Text>
+                    </View>
+                </LinearGradient>
+
+                {/* Active Todos */}
+                <LinearGradient colors={colors.gradients.background}
+                    style={[SettingStyle.statCard, { borderLeftColor: colors.warning }]}>
+                    <View style={SettingStyle.statIconContainer}>
+
+                        <LinearGradient colors={colors.gradients.warning}
+                            style={SettingStyle.statIcon}>
+                            <Ionicons name='time' size={20} color="#fff"></Ionicons>
+                        </LinearGradient>
+                    </View>
+
+                    <View >
+                        <Text style={SettingStyle.statNumber}>{activeTodos}</Text>
+                        <Text style={SettingStyle.StatLabel}>Active Todos</Text>
                     </View>
                 </LinearGradient>
             </View>
