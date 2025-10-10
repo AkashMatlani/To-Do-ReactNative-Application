@@ -91,6 +91,33 @@ export const createSettingStyle = (colors: ColorScheme) => {
             fontWeight: "600",
             marginTop: 2,
             color: colors.textMuted,
+        },
+        settingItem:{
+            flexDirection:"row",
+            justifyContent:"space-between",
+            alignItems:"center",
+            paddingVertical:20,
+            borderBottomWidth:1,
+            borderBottomColor:colors.border
+        },
+
+        settingLeft:{
+            flexDirection:"row",
+            alignItems:"center",
+            flex:1,
+        },
+        settingIcon:{
+            width:36,
+            height:36,
+            borderRadius:8,
+            justifyContent:"center",
+            alignItems:"center",
+            marginRight:16,
+        },
+        settingText:{
+            fontSize:17,
+            fontWeight:"600",
+            color:colors.text,
         }
     });
     return style;
