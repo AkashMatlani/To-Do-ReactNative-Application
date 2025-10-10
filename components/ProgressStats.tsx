@@ -23,12 +23,14 @@ const ProgressStats = () => {
         <LinearGradient colors={colors.gradients.surface} style={SettingStyle.section}>
             <Text style={SettingStyle.sectionTitle}>Progress Stats </Text>
 
-            <LinearGradient colors={colors.gradients.background}
-                style={[SettingStyle.statCard, { borderLeftColor: colors.primary }]}>
+            <View style={SettingStyle.statsContainer}>
+                {/* Total Todos */}
+                <LinearGradient colors={colors.gradients.background}
+                    style={[SettingStyle.statCard, { borderLeftColor: colors.primary }]}>
                     <View style={SettingStyle.statIconContainer}>
 
                         <LinearGradient colors={colors.gradients.primary}
-                        style={SettingStyle.statIcon}>
+                            style={SettingStyle.statIcon}>
                             <Ionicons name='list' size={20} color="#fff"></Ionicons>
                         </LinearGradient>
                     </View>
@@ -37,10 +39,29 @@ const ProgressStats = () => {
                         <Text style={SettingStyle.statNumber}>{totalTodos}</Text>
                         <Text style={SettingStyle.StatLabel}>Total Todos</Text>
                     </View>
-            </LinearGradient>
+                </LinearGradient>
+
+                  {/* Completed Todos */}
+                <LinearGradient colors={colors.gradients.background}
+                    style={[SettingStyle.statCard, { borderLeftColor: colors.success }]}>
+                    <View style={SettingStyle.statIconContainer}>
+
+                        <LinearGradient colors={colors.gradients.success}
+                            style={SettingStyle.statIcon}>
+                            <Ionicons name='checkmark-circle' size={20} color="#fff"></Ionicons>
+                        </LinearGradient>
+                    </View>
+
+                    <View >
+                        <Text style={SettingStyle.statNumber}>{completedTodos}</Text>
+                        <Text style={SettingStyle.StatLabel}>Completed</Text>
+                    </View>
+                </LinearGradient>
+            </View>
+
         </LinearGradient>
-    )
+    );
 }
 
-export default ProgressStats
+export default ProgressStats;
 

@@ -67,6 +67,9 @@ export const createSettingStyle = (colors: ColorScheme) => {
             borderRadius: 16,
             borderLeftWidth: 4,
         },
+        statsContainer: {
+            gap: 16,
+        },
         statIconContainer: {
             marginRight: 16,
         },
