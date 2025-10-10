@@ -17,7 +17,7 @@ const Preferences = () => {
         <LinearGradient colors={colors.gradients.surface} style={SettingsStyle.section}>
 
             <Text style={SettingsStyle.sectionTitle}>Preferences</Text>
-
+               {/* Dark mode */}
             <View style={SettingsStyle.settingItem}>
                 <View style={SettingsStyle.settingLeft}>
                     <LinearGradient colors={colors.gradients.primary} style={SettingsStyle.settingIcon}>
@@ -32,6 +32,29 @@ const Preferences = () => {
                     value={isDarkMode}
                     onValueChange={toggleDarkMode}
                     thumbColor={"#fff"}
+                    trackColor={{false: colors.border, true:colors.primary}}
+                    // ios
+                    ios_backgroundColor={colors.border}
+                ></Switch>
+            </View>
+               {/* Notification */}
+            <View style={SettingsStyle.settingItem}>
+                <View style={SettingsStyle.settingLeft}>
+                    <LinearGradient colors={colors.gradients.primary} style={SettingsStyle.settingIcon}>
+
+                        <Ionicons name='moon' size={18} color="#fff"></Ionicons>
+                    </LinearGradient>
+                    <Text style={SettingsStyle.settingText}>Dark Mode</Text>
+
+                </View>
+
+                <Switch
+                    value={isDarkMode}
+                    onValueChange={toggleDarkMode}
+                    thumbColor={"#fff"}
+                    trackColor={{false: colors.border, true:colors.primary}}
+                    // ios
+                    ios_backgroundColor={colors.border}
                 ></Switch>
             </View>
         </LinearGradient>

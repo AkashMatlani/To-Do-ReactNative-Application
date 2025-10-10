@@ -75,7 +75,6 @@ const ProgressStats = () => {
                     </View>
                 </LinearGradient>
             </View>
-
         </LinearGradient>
     );
 }
